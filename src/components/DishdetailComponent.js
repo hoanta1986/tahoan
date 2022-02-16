@@ -6,9 +6,9 @@ import {
 
 
 
-class DishDetail extends Component {
 
-  renderDish(dish) {
+
+  function RenderDish({dish}) {
     return (
       <div className="col-12 col-md-5 m-1">
         <Card >
@@ -21,7 +21,7 @@ class DishDetail extends Component {
       </div>
     );
   }
-  renderComments(comments) {
+  function RenderComments({comments}) {
     if (comments != null)
       return (
         <div className="col-12 col-md-5 m-1">
@@ -41,13 +41,14 @@ class DishDetail extends Component {
         <div></div>
       );
   }
-  render() {
-    if (this.props.dish != null)
+  const DishDetail =(props) =>{
+ 
+    if (props.dish != null)
       return (
         <div className="container">
           <div className="row">
-          {this.renderDish(this.props.dish)}
-            {this.renderComments(this.props.dish.comments)}
+         <RenderDish dish={props.dish}/>
+         <RenderComments comments={props.dish.comments}/>
             </div>
         </div>
       );
@@ -55,6 +56,6 @@ class DishDetail extends Component {
       return (
         <div></div>
       );
+  
   }
-}
 export default DishDetail;
