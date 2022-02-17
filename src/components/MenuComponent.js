@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardImgOverlay,
     CardTitle } from 'reactstrap';
 
-    function RenderMenuItem ({dish, onClick}) {
+    function RenderMenuItem ({dish}) {
       
         return (
             <Card>
@@ -28,6 +28,7 @@ import { Card, CardImg, CardImgOverlay,
                 <div className="row">
                     {menu}
                 </div>
+              
             </div>
         );
     }
