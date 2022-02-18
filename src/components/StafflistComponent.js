@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Card, CardFooter,CardHeader } from 'reactstrap';
+import { Card, CardFooter, CardHeader } from 'reactstrap';
 import dateFormat from 'dateformat';
 class StaffList extends Component {
     constructor(props) {
@@ -25,7 +25,6 @@ class StaffList extends Component {
                         <p>Số ngày đã làm thêm : {staff.overTime}</p>
                     </CardFooter>
                 </Card>
-
             );
         else
             return (
@@ -34,7 +33,7 @@ class StaffList extends Component {
     }
     render() {
 
-        const StaffList = this.props.staffs.map((staff) => {
+        const StaffList = this.props.staffs.slice(0,6).map((staff) => {
             return (
                 <CardHeader className="col-12 col-md-6 col-lg-4 ">
                     <ul className="list-group">
@@ -44,16 +43,12 @@ class StaffList extends Component {
                     </ul>
                 </CardHeader>
             );
-        
         });
-      
         return (
-           
             <div className="container">
                 <div className="row">
                     {StaffList}
                 </div>
-              
                 <div className="row">
                     {this.renderStaff(this.state.selectedStaff)}
                 </div>
@@ -61,7 +56,4 @@ class StaffList extends Component {
         );
     }
 }
-
-
-
 export default StaffList;
