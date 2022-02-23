@@ -3,21 +3,21 @@ import { CardHeader, CardBody, Card } from 'reactstrap';
 
 
 
-function RenderRoom({ staff }) {
+function RenderRoom({ department }) {
   return (
-    <Card class key={staff.id} >
-      <CardHeader><b>{staff.department.name}</b></CardHeader>
-      <CardBody>Số lượng nhân viên : {staff.department.numberOfStaff}</CardBody>
+    <Card class key={department.id} >
+      <CardHeader><b>{department.name}</b></CardHeader>
+      <CardBody>Số lượng nhân viên : {department.numberOfStaff}</CardBody>
     </Card>
   )
 }
 
 const Room = (props) => {
-  const room = props.staffs.map((staff) => {
+  const room = props.departments.map((department) => {
 
     return (
       <div  className="col-12 col-md-4 col-lg-4">
-        <RenderRoom staff={staff} />
+        <RenderRoom department={department} />
       </div>
     )
   })
