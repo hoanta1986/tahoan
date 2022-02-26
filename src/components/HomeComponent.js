@@ -14,9 +14,7 @@ function RenderCard({ item }) {
       </CardBody>
     </Card>
   );
-
 }
-
 function Home(props) {
   return (
     <div className="container">
@@ -34,5 +32,4 @@ function Home(props) {
     </div>
   );
 }
-
 export default Home;  
